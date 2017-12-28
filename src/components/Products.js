@@ -2,21 +2,8 @@ import React, { Component } from 'react'
 import store from '../store'
 
 class Products extends Component {
-  state = {
-    products: [
-      {
-        id: '324',
-        name: '苹果电脑'
-      },
-      {
-        id: '452',
-        name: '橘子'
-      }
-    ]
-  }
   render() {
-    console.log(store.getState())
-    const { products } = this.state
+    const { products } = store.getState()
     const productList = products.map(t => <div key={t.id}>{t.name}</div>)
     return (
       <div>
