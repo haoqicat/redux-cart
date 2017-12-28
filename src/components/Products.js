@@ -4,6 +4,7 @@ import store from '../store'
 class Products extends Component {
   render() {
     const { products } = store.getState()
+    console.log(store.getState())
     const productList = products.map(t => <div key={t.id}>{t.name}</div>)
     return (
       <div>

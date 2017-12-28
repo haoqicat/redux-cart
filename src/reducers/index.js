@@ -1,18 +1,10 @@
-const initialState = {
-  products: [
-    {
-      id: '324',
-      name: '苹果电脑'
-    },
-    {
-      id: '452',
-      name: '橘子'
-    }
-  ]
-}
+import { combineReducers } from 'redux'
+import cart from './cart'
+import products from './products'
 
-const rootReducer = (state = initialState, action) => {
-  return state
-}
+const rootReducer = combineReducers({
+  cart,
+  products
+})
 
 export default rootReducer
