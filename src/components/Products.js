@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import store from '../store'
 
 class Products extends Component {
   state = {
@@ -14,6 +15,7 @@ class Products extends Component {
     ]
   }
   render() {
+    console.log(store.getState())
     const { products } = this.state
     const productList = products.map(t => <div key={t.id}>{t.name}</div>)
     return (
