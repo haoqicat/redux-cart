@@ -6,7 +6,7 @@ class Cart extends Component {
     const hasProduct = products.length > 0
     const productList = products.map(t => (
       <div key={t.id}>
-        {t.name}
+        {t.name}--{t.quantity}
       </div>
     ))
     return (
