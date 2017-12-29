@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 
 class Cart extends Component {
   render () {
-    const { cart } = this.props
-    const hasProduct = cart.length > 0
-    const productList = cart.map(t => (
-      <div key={t}>
-        {t}
+    const { products } = this.props
+    const hasProduct = products.length > 0
+    const productList = products.map(t => (
+      <div key={t.id}>
+        {t.name}
       </div>
     ))
     return (
