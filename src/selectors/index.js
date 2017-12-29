@@ -1,6 +1,6 @@
 export const getCartProducts = state => {
   const allProducts = getProductsById(state)
-  const cartProducts = state.cart.map(id => allProducts[id])
+  const cartProducts = state.cart.addedIds.map(id => allProducts[id])
   return cartProducts
 }
 

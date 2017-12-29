@@ -1,6 +1,6 @@
-const initialState = []
+import { combineReducers } from 'redux'
 
-const cart = (state = initialState, action) => {
+const addedIds = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TO_CART':
       if(state.indexOf(action.productId) !== -1) {
@@ -12,4 +12,11 @@ const cart = (state = initialState, action) => {
   }
 }
 
-export default cart
+const quantityById = (state = {}, action) => {
+  return state
+}
+
+export default combineReducers({
+  addedIds,
+  quantityById
+})
