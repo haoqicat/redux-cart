@@ -13,7 +13,15 @@ const addedIds = (state = [], action) => {
 }
 
 const quantityById = (state = {}, action) => {
-  return state
+  switch (action.type) {
+    case 'ADD_TO_CART':
+      const { productId } = action
+      return {...state, 
+        [productId]: (state[productId] || 0) + 1
+      }
+    default:
+      return state
+  }
 }
 
 export default combineReducers({
