@@ -10,7 +10,6 @@ const initialState = [
 ]
 
 const products = (state = initialState, action) => {
-  console.log('products reducer---', action)
   return state
 }
 
