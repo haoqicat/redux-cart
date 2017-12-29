@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import store from '../store'
+import { connect } from 'react-redux'
 
 class Cart extends Component {
   render () {
-    const { cart } = store.getState()
+    const { cart } = this.props
     const hasProduct = cart.length > 0
     const productList = cart.map(t => (
       <div key={t}>
@@ -20,4 +20,8 @@ class Cart extends Component {
   }
 }
 
-export default Cart
+const mapStateToProps = state => ({
+  cart: state.cart
+})
+
+export default connect(mapStateToProps)(Cart)
