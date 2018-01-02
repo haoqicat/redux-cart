@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class Cart extends Component {
   render () {
-    const { products } = this.props
+    const { products, total } = this.props
     const hasProduct = products.length > 0
     const productList = products.map(t => (
       <div key={t.id}>
@@ -11,6 +11,7 @@ class Cart extends Component {
     ))
     return (
       <div>
+        <p>总计：{total}元</p>
         {
           hasProduct ? productList : '请添加商品'
         }

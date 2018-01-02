@@ -15,3 +15,12 @@ const getProductsById = state => {
     return obj
   }, {})
 }
+
+export const getTotal = state =>
+  state.cart.addedIds
+    .reduce(
+      (total, id) =>
+        total + getProductsById(state)[id].price * state.cart.quantityById[id],
+      0
+    )
+    .toFixed(2)
