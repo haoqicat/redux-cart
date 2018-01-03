@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import store from '../store'
+import styled from 'styled-components'
 
 class Products extends Component {
   handleClick = productId => {
@@ -18,12 +19,16 @@ class Products extends Component {
       </div>)
     )
     return (
-      <div>
+      <Wrap>
         <h2> 所有商品 </h2>
         {productList}
-      </div>
+      </Wrap>
     )
   }
 }
 
 export default Products
+
+const Wrap =  styled.div`
+  background: #00bcd4;
+`
