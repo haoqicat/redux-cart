@@ -15,7 +15,7 @@ class Products extends Component {
         <div>
           {t.name}
         </div>
-        <button onClick={() => this.handleClick(t.id)} >购买</button>
+        <Button onClick={() => this.handleClick(t.id)} >购买</Button>
       </div>)
     )
     return (
@@ -31,4 +31,14 @@ export default Products
 
 const Wrap =  styled.div`
   background: #00bcd4;
+`
+
+const Button = styled.button`
+  background-color: #FF5722;
+  color: white;
+  text-align: center;
+  border-radius: 3px;
+  line-height: 2;
+  padding: 3px 30px;
+  border: 0;
 `
